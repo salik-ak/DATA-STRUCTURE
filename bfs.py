@@ -6,10 +6,10 @@ def bfs(graph, start):
     visited.add(start)
     while queue:
         node = queue.popleft()
-        print(node)
+        print(node,end='-->')
         for neighbor in graph[node]:
             if neighbor not in visited:
-                visited.add(neighbor)
+                visited.add(neighbor) 
                 queue.append(neighbor)
 
 graph = {

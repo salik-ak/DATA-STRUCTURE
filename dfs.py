@@ -1,19 +1,21 @@
-def dfs(graph, start, visited=None):
-    if visited is None:
-        visited = set()
-    visited.add(start)
-    print(start)
-    for neighbor in graph[start]:
-        if neighbor not in visited:
-            dfs(graph, neighbor, visited)
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
 
-graph = {
-    'A': ['B', 'C'],
-    'B': ['D', 'E'],
-    'C': ['F'],
-    'D': [],
-    'E': [],
-    'F': []
-}
+def dfs(root):
+    if root:
+        print(root.val,end='-->')
+        dfs(root.left)
+        dfs(root.right)
 
-dfs(graph, 'A')
+root = TreeNode(1)
+root.left = TreeNode(2)
+root.right = TreeNode(3)
+root.left.right = TreeNode(4)
+root.right.left = TreeNode(5)
+root.right.right = TreeNode(6)
+
+dfs(root)
+

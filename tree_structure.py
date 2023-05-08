@@ -3,7 +3,6 @@ class BST:
         self.key = key
         self.lchild = None
         self.rchild = None
-        
     def insert(self,data):
         if self.key is None: 
             self.key = data
@@ -50,8 +49,8 @@ class BST:
 root = BST(10)
 list1 = [12,43,56,32,2,45]
 
-for i in list1:
-    print(root.insert(i))
+# for i in list1:
+#     print(root.insert(i))
 print(root.insert(23))
 print(root.insert(9))
 print(root.key)
